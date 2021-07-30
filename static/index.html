@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Travel Poker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;500;600;700&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <!--
+    <aside class="sidebar">
+      <div class="sidebar__overlay"></div>
+      <div class="sidebar__panel">
+        <nav class="sidebar__nav">
+          <a class="header__a">Наборы</a>
+          <a class="header__a">Kickstarter</a>
+          <a class="header__a">Контакты</a>
+        </nav>
+        <span class="header__social-links">
+          <a class="header__social-link">
+            <img src="img/instagram.svg">
+          </a>
+          <a class="header__social-link">
+            <img src="img/facebook.svg">
+          </a>
+        </span>
+        </div>
+    </aside>-->
+    <header class="header">
+      <a>
+        <img src="img/logo.svg">
+      </a>
+      <nav class="header__nav">
+        <a class="header__a">Наборы</a>
+        <a class="header__a">Kickstarter</a>
+        <a class="header__a">Контакты</a>
+      </nav>
+      <span class="lang-indicator">
+        <!--TODO: Refactor: lang-indicator -> lang-switcher; toggle-button -> input -->
+        <label class="lang-indicator__label">EN</label>
+        <input class="lang-indicator__toggle-button" type="checkbox" checked>
+        <label class="lang-indicator__label lang-indicator__label--enabled">RU</label>
+      </span>
+      <span class="header__social-links">
+        <a class="header__social-link">
+          <img src="img/instagram.svg">
+        </a>
+        <a class="header__social-link">
+          <img src="img/facebook.svg">
+        </a>
+      </span>
+      <span class="sidebar-button">
+        <input class="sidebar-button__input" type="checkbox">
+      </span>
+    </header>
+    <hr class="separator">
+    <main>
+      <section class="section-1">
+        <section class="section-1__info">
+          <h1 class="section-1__h1">Travel Poker<br>всюду с тобой</h1>
+          <p class="section-1__p">Играй в покер без ограничений</p>
+          <div class="section-1__button-box">
+            <a class="section-1__buy-button">Заказать</a>
+            <a class="section-1__video-button">
+              <img src="img/play.svg">
+            </a>
+            <a class="section-1__a">Узнать больше</a>
+          </div>
+        </section>
+        <section class="section-1__images">
+          <!--TODO: Изображения отдельными блоками-->
+          <img class="section-1__image" src="img/section-1.png">
+        </section>
+      </section>
+      <section class="section-2">
+        <section class="section-2__info">
+          <h1 class="section-2__h1">Travel Poker — компактный<br>покерный набор, с которым<br>легко быть в движении</h1>
+          <p class="section-2__p">Компактнее обычного набора в 8 раз! Полноценный покерный набор для большой компании.</p>
+        </section>
+        <section class="section-2__images">
+          <!--TODO: Изображения отдельными блоками-->
+          <img class="section-2__image" src="img/section-2.png">
+        </section>
+      </section>
+      <section class="products">
+        <div class="products__header">
+          <h1 class="products__h1">Найди свой набор Travel Poker</h1>
+          <span class="products__span">Посмотреть на <a class="products__a">Kickstarter⟶</a></span>
+        </div>
+        <div class="products__grid">
+          <div class="product">
+            <figure class="product__info">
+              <img class="product__image" src="img/product.png">
+              <figcaption class="product__name">Gold edition pack</figcaption>
+              <figcaption class="product__description">Эксклюзивный покерный набор Gold edition pack в золотом цвете. Для настоящих ценителей игры.</figcaption>
+            </figure>
+            <div class="product__buy-box">
+              <span class="product__price">$250</span>
+              <a class="product__buy-button">Buy</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
