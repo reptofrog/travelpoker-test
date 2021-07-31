@@ -7,7 +7,7 @@
           <div class="section-1__button-box">
             <a class="section-1__buy-button">Заказать</a>
             <a class="section-1__video-button">
-              <img src="<?= get_template_directory_uri(); ?>img/play.svg">
+              <img src="<?= get_template_directory_uri(); ?>/img/play.svg">
             </a>
             <a class="section-1__a">Узнать больше</a>
           </div>
