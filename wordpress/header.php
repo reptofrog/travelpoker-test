@@ -45,7 +45,7 @@
         <label class="lang-indicator__label">EN</label>
         <input class="lang-indicator__toggle-button" type="checkbox" checked>
         <label class="lang-indicator__label lang-indicator__label--enabled">RU</label>
-      </z
+      </span>
       <span class="header__social-links">
         <a class="header__social-link">
           <img src="<?= get_template_directory_uri(); ?>/img/instagram.svg">
