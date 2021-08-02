@@ -12,6 +12,11 @@ body {
   margin: 0;
 }
 
+body.preload * {
+  animation-duration: 0s !important;
+  transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}
+
 @mixin blocks-mixin($padding) {
   $blocks-max-width: 1300px;
   $blocks-padding:   $padding;
@@ -30,9 +35,13 @@ footer {
 
 .header {
   align-items: center;
+  background: white;
   display: flex;
   height: 88px;
   gap: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   img {
     display: block;
@@ -268,9 +277,12 @@ footer {
 
 .separator {
   border: none;
-  border-bottom: 2px solid $light-gray;
+  border-bottom: 2px solid rgba($color: black, $alpha: 0.08);
   margin: 0;
   width: 100%;
+  position: sticky;
+  top: 88px;
+  z-index: 4;
 }
 
 .lang-indicator {
@@ -322,21 +334,96 @@ footer {
   }
 }
 
-.sidebar-button {
+.sidebar {
   display: none;
-  z-index: 3;
 
-  &__input {
+  &__container {
+    background: rgba($color: black, $alpha: 0.3);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.1s;
+  }
+
+  &__button {
     appearance: none;
-    background: url(../img/menu.svg);
+    background: url(img/menu.svg);
     cursor: pointer;
     height: 42px;
+    position: relative;
     width: 47px;
+    z-index: 3;
+  }
+
+  &__button:checked ~ &__container {
+    opacity: 1;
+    transition: 0.1s;
+  }  
+
+  &__button:checked ~ &__container &__panel {
+    transform: translateX(0px);
+  }
+
+  &__panel {
+    align-items: center;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    height: 100%;
+    padding-top: 160px;
+    position: fixed;
+    right: 0;
+    transform: translateX(370px);
+    transition: 0.1s;
+    width: 370px;
+  }
+
+  &__panel .lang-indicator {
+    position: absolute;
+    display: none;
+    top: 34px;
+    left: 20px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__a {
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  &__hr {
+    border: none;
+    border-bottom: solid 2px $light-gray;
+    width: 120px;
+  }
+
+  &__hr:last-child {
+    display: none;
+  }
+
+  .header__social-links {
+    display: flex;
   }
 }
 
 @media screen and (max-width: 1200px) {
   // Extra large
+  .sidebar {
+    display: initial;
+  }
+
   .header {
     &__nav {
       display: none;
@@ -345,10 +432,6 @@ footer {
     &__social-links {
       display: none
     }
-  }
-
-  .sidebar-button {
-    display: initial;
   }
 
   .section-1 {
@@ -491,6 +574,24 @@ footer {
 
     @media screen and (max-width: 690px) {
       // Small
+      .header {
+        & > .lang-indicator {
+          display: none;
+        }
+      }
+
+      .sidebar {
+          margin-left: auto;
+          
+          &__panel {
+            width: 100vw;
+          }
+
+          &__panel .lang-indicator {
+            display: flex;
+          }
+      }
+
       .section-1 {
         justify-items: center;
         flex-direction: column;

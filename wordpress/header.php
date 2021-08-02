@@ -10,25 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;500;600;700&display=swap" rel="stylesheet"> 
   </head>
   <body>
-    <!--
-    <aside class="sidebar">
-      <div class="sidebar__overlay"></div>
-      <div class="sidebar__panel">
-        <nav class="sidebar__nav">
-          <a class="header__a">Наборы</a>
-          <a class="header__a">Kickstarter</a>
-          <a class="header__a">Контакты</a>
-        </nav>
-        <span class="header__social-links">
-          <a class="header__social-link">
-            <img src="img/instagram.svg">
-          </a>
-          <a class="header__social-link">
-            <img src="img/facebook.svg">
-          </a>
-        </span>
-        </div>
-    </aside>-->
     <header class="header">
       <a>
         <img src="<?= get_template_directory_uri(); ?>/img/logo.svg">
@@ -54,8 +35,34 @@
           <img src="<?= get_template_directory_uri(); ?>/img/facebook.svg">
         </a>
       </span>
-      <span class="sidebar-button">
-        <input class="sidebar-button__input" type="checkbox">
+      <span class="sidebar">
+        <input class="sidebar__button" type="checkbox">
+        <aside class="sidebar__container">
+          <div class="sidebar__panel">
+            <span class="lang-indicator">
+              <!--TODO: Refactor: lang-indicator -> lang-switcher; toggle-button -> input -->
+              <label class="lang-indicator__label">EN</label>
+              <input class="lang-indicator__toggle-button" type="checkbox" checked>
+              <label class="lang-indicator__label lang-indicator__label--enabled">RU</label>
+            </span>
+            <nav class="sidebar__nav">
+              <?php 
+                $pages = get_pages(); 
+                foreach($pages as $page): ?>
+              <a class="sidebar__a" href=<?= $page->guid?>><?= $page->post_title?></a>
+              <hr class="sidebar__hr">
+              <?php endforeach; ?>
+            </nav>
+            <span class="header__social-links">
+              <a class="header__social-link">
+                <img src="<?= get_template_directory_uri(); ?>/img/instagram.svg">
+              </a>
+              <a class="header__social-link">
+                <img src="<?= get_template_directory_uri(); ?>/img/facebook.svg">
+              </a>
+            </span>
+          </div>
+        </aside>
       </span>
     </header>
     <hr class="separator">
