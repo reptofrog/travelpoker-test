@@ -1,1 +1,1 @@
-https://zappedfish.github.io/ttravelpoker-test/
+https://zappedfish.github.io/travelpoker-test/
