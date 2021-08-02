@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<main>
       <section class="section-1">
         <section class="section-1__info">
           <h1 class="section-1__h1">Travel Poker<br>всюду с тобой</h1>
